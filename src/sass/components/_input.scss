@@ -1,0 +1,73 @@
+.InputBox{
+    width: 100%;
+    border-bottom: 1px solid $black-colour;
+    position: relative;
+    font-weight: 500;
+
+    &__input{
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: $black-colour;
+        font-family: inherit;
+        padding-bottom: .25rem;
+        width: 100%;
+        font-size: $def-font-size;
+    }
+
+    &__label{
+        position: absolute;
+        left: 0;
+        transition: all .2s ease-in;
+        font-style: italic;
+
+        &--shifted{
+            transform: translateY(2.25rem);
+            font-size: 1.2rem;
+            //color: darken($white-colour, 20%)
+        }
+    }
+
+    &__input:focus + &__label{
+        transform: translateY(2.25rem);
+        font-size: 1.2rem;
+        //color: darken($white-colour, 20%)
+    }
+}
+
+.InputBox--inverted{
+    width: 100%;
+    border-bottom: 1px solid $white-colour;
+    position: relative;
+    font-weight: 500;
+
+    &__input{
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: $white-colour !important;
+        font-family: inherit;
+        padding-bottom: .25rem;
+        width: 100%;
+        font-size: $def-font-size;
+    }
+
+    &__label{
+        position: absolute;
+        left: 0;
+        transition: all .2s ease-in;
+        font-style: italic;
+
+        &--shifted{
+            transform: translateY(2.25rem);
+            font-size: 1.2rem;
+            //color: darken($white-colour, 20%)
+        }
+    }
+
+    &__input:focus + &__label{
+        transform: translateY(2.25rem);
+        font-size: 1.2rem;
+        //color: darken($white-colour, 20%)
+    }
+}

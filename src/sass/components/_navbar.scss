@@ -1,0 +1,43 @@
+.Navbar{
+    width: 100%;
+    height: $nav-height;
+    position: fixed;
+    z-index: 1;
+    padding-left: $side-gutter;
+    padding-right: $side-gutter;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $white-colour;
+    background-color: $black-colour;
+    top: 0;
+
+    &__logo{
+        letter-spacing: 7px;
+        font-size: 1.8rem;
+        //border: 1px solid $white-colour;
+        position: relative;
+        transition: .3s;
+        cursor: pointer;
+
+        @include bottom_border;
+    }
+
+    &__buttonsCtn{
+        right: $side-gutter;
+        cursor: pointer;
+    }
+
+    &__buttons{
+        position: relative;
+        padding: 1px;
+        
+        display: inline-block;
+        &:not(:last-child){
+            margin-right: 5rem;
+        }
+
+        @include bottom_border;
+        
+    }
+}

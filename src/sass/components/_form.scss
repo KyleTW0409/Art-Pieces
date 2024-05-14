@@ -1,0 +1,92 @@
+.Form{
+    width: 30%;
+    background-color: rgba($white-colour, 1);
+    padding: 5rem;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1rem 1rem 1.5rem rgba($black-colour, .8);
+    animation: fadeInLeft .65s ease;
+    backface-visibility: hidden;
+    color: $black-colour;
+    margin-top: -$nav-height;
+    max-height: 75vh;
+    overflow-y: scroll;
+    &__heading{
+        letter-spacing: 15px;
+        text-align: left;
+    }
+
+    &__error{
+        color: red;
+        font-size: 1.3rem;
+        font-style: italic;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        visibility: hidden;
+        text-align: center;
+    }
+
+    &__backIcon{
+        width: 3rem;
+        position: absolute;
+        right: 5rem;
+        cursor: pointer;
+        transition: all .3s;
+
+        &:active{
+            transform: translateY(3px);
+        }
+    }
+
+    @media screen and (orientation: portrait) {
+        &{
+            width: 60%;
+        }
+    }
+}
+
+.Form--withImage{
+    width: 60%;
+
+    &__Ctn{
+        display: flex;
+    }
+
+    &__inputs{
+        width: 50%;
+        text-align: center;
+
+        & > .Button{
+            margin-top: 1rem;
+        }
+
+        &__error{
+            visibility: hidden;
+            color: red;
+        }
+    }
+
+    &__imageArea{
+        width: 50%;
+        padding-left: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__image{
+            max-width: 80%;
+            max-height: 80%;
+        }
+    }
+}
+
+
+.showError{
+    visibility: visible;
+}
+
+.shiftUp{
+    margin-top: 2.5rem;
+}

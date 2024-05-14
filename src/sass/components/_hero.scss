@@ -1,0 +1,34 @@
+.Hero{
+    width: 100%;
+    height: 100vh;
+    //background-image: linear-gradient(to right bottom, rgba(#7469B6, 0.6), rgba(#AD88C6, .6), rgba(#E1AFD1, 0.6)), url("../public/grafiti.jpg");
+    background-image: linear-gradient(to bottom, rgba(#000, 0.3), rgba(#000, .3)), url("../public/painting.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &__siteName{
+        position: absolute;
+        left: 12rem;
+        top: 5rem;
+        font-size: 2rem;
+        letter-spacing: 5px;
+        font-weight: 200;
+    }
+
+    &__siteSlogan{
+        position: absolute;
+        left: calc(#{$side-gutter} *2);
+        font-weight: 200;
+        letter-spacing: 1.5rem;
+        color: $white-colour;
+        font-size: 3rem;
+        margin-bottom: 10rem;
+        animation: fadeInLeft 1.5s ease-in-out;
+    }
+} 

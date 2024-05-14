@@ -1,0 +1,95 @@
+.ArtCard{
+    position: relative;
+    width: max-content;
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    margin: 1rem;
+    animation: fadeInLeft .5s ease .1s backwards;
+
+    &__img{
+        width: 35rem;
+        height: 50rem;
+        visibility: hidden;
+    }
+
+    &__side{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        color: $black-colour;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+        transition: all .5s;
+        border-radius: 5px;
+
+        &--front{
+            background-color: $black-colour;
+            color: $white-colour;
+            background-size: cover;
+            background-position: center;
+            
+
+            &__image{
+                width: 100%;
+                height: 100%;
+                display: none;
+            }
+        }
+
+        &--back{
+            background-image: linear-gradient(to bottom right,$black-colour, $white-colour);
+            color: $white-colour;
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-direction: column;
+            border: 1px solid $black-colour;
+            padding: 3rem;
+            box-shadow: .5rem .5rem 1rem $black-colour;
+
+            &__details{
+                display: flex;
+                justify-self: center;
+                align-items: center;
+                width: 100%;
+                flex-direction: column;
+                height: 100%;
+
+                &__name{
+                    margin-bottom: 2rem;
+                }
+
+                &__artist{
+                    text-decoration: underline;
+                    text-underline-offset: 3px;
+                    text-decoration-thickness: 1px;
+                    font-size: 1.5rem;
+                    align-self: center;
+                    text-align: center;
+                }
+
+                &__info{
+                    margin-bottom: 2rem;
+                    text-align: center;
+
+                    & > span{
+                        font-weight: 600;
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+
+    &:hover &__side--front{
+        transform: rotateY(180deg);
+
+    }
+
+    &:hover &__side--back{
+        transform: rotateY(0deg);
+
+    }
+}

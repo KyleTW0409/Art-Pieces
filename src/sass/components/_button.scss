@@ -1,0 +1,82 @@
+.Button{
+    background-color: transparent;
+    border: none;
+    color: $black-colour;
+    padding: 1rem;
+    font-family: inherit;
+    border: 1px solid $black-colour;
+    width: 15rem;
+    align-self: center;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    position: relative;
+    transition: all .2s;
+    z-index: 1;
+    cursor: pointer;
+
+    &::after{
+        content: "";
+        width: 100%;
+        height: 0%;
+        background-color: $black-colour;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        transition: all .2s ease-in;
+    }
+
+    &:hover{
+        color: $white-colour;
+
+        &::after{
+            height: 100%;
+        }
+    }
+
+    &:active{
+        transform: translateY(3px);
+    }
+}
+
+.Button--invertColour{
+    background-color: transparent;
+    border: none;
+    color: $white-colour;
+    padding: 1rem;
+    font-family: inherit;
+    border: 1px solid $white-colour;
+    width: 15rem;
+    align-self: center;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    position: relative;
+    transition: all .2s;
+    z-index: 1;
+    cursor: pointer;
+
+    &::after{
+        content: "";
+        width: 100%;
+        height: 0%;
+        background-color: $white-colour;
+        position: absolute;
+        border-radius: 5px;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        transition: all .2s ease-in;
+    }
+
+    &:hover{
+        color: $black-colour;
+
+        &::after{
+            height: 100%;
+        }
+    }
+
+    &:active{
+        transform: translateY(3px);
+    }
+}

@@ -1,0 +1,77 @@
+.TokenForm{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    // background-image: linear-gradient(to right, rgba(0,0,0, .0), rgba(0,0,0,1)), url("../public/gravity_falls.jpg");
+    background-size: contain;
+    background-repeat:repeat-x;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+    animation: fadeIn .75s ease;
+
+    &__form{
+        position: relative;
+        width: 30%;
+        background-color: rgba($white-colour, 1);
+        color: $black-colour;
+        padding: 5rem;
+        margin-top: -$nav-height;
+        border-radius: 5px;
+        box-shadow: 1rem 1rem 1rem rgba($black-colour, .5);
+        animation: fadeInLeft .75s ease 1s backwards;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        &__heading{
+            width: 80%;
+            margin-bottom: .5rem;
+        }
+
+        &__info{
+            align-self: flex-start;
+            text-align: left;
+        }
+
+        &__input{
+            margin-top: 3rem;
+        }
+
+        &__error{
+            font-size: 1.2rem;
+            color: red;
+            visibility: hidden;
+        }
+
+        &__error--show{
+            visibility: visible;
+        }
+
+        &__backIcon{
+            top: 5rem;
+        }
+
+        &__valuesBox{
+            width: 100%;
+            height: 8rem;
+            background-color: $black-colour;
+            border-radius: 5px;
+            display: flex;
+
+            &__value{
+                width: 50%;
+                color: $white-colour;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2rem;
+                font-weight: 500;
+            }
+        }
+    }
+}

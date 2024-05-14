@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%; //defition for 1rem; equates to 10px
+    background-color: $white-colour;
+    height: 100%;
+}
+
+body{
+    box-sizing: border-box;
+    position: relative;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: rgba($white-colour, .7) !important;
+    border-radius: 0px 5px 5px 0px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: rgba($white-colour, .7);
+    border-radius: 0px 5px 5px 0px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

@@ -1,0 +1,29 @@
+.Gallery{
+    width: 100%;
+    padding-top: calc(#{$nav-height} + 4rem);
+    height: 100vh;
+    color: $black-colour;
+    text-align: center;
+    position: relative;
+    animation: fadeIn .75s ease;
+
+    &__TokenForm{
+        display: none;
+
+    }
+
+    &__TokenForm--show{
+        display: flex;
+    }
+
+    &__heading{
+        font-size: 3rem;
+    }
+
+    &__paintings{
+        display: flex;
+        padding: 2rem;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+}

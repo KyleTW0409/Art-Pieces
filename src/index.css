@@ -1,13 +1,505 @@
-body {
+*,
+*::before,
+*::after {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  box-sizing: inherit; }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+html {
+  font-size: 62.5%;
+  background-color: #F8FAE5;
+  height: 100%; }
+
+body {
+  box-sizing: border-box;
+  position: relative; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: rgba(248, 250, 229, 0.7) !important;
+  border-radius: 0px 5px 5px 0px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: rgba(248, 250, 229, 0.7);
+  border-radius: 0px 5px 5px 0px; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; }
+
+body {
+  font-family: "Ubuntu Sans", sans-serif;
+  color: #F8FAE5;
+  font-size: 1.4rem;
+  letter-spacing: 5px; }
+
+@keyframes fontFadeIn {
+  0% {
+    opacity: 0;
+    letter-spacing: 0px; }
+  100% {
+    opacity: 1;
+    letter-spacing: 15px; } }
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-3rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0px); } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.u-centered-middle {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.u-margin-top-sm {
+  margin-top: 2rem; }
+
+.u-margin-top-md {
+  margin-top: 4rem; }
+
+.u-margin-top-lg {
+  margin-top: 6rem; }
+
+.Hero {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../public/painting.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; }
+  .Hero__siteName {
+    position: absolute;
+    left: 12rem;
+    top: 5rem;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    font-weight: 200; }
+  .Hero__siteSlogan {
+    position: absolute;
+    left: calc(4rem *2);
+    font-weight: 200;
+    letter-spacing: 1.5rem;
+    color: #F8FAE5;
+    font-size: 3rem;
+    margin-bottom: 10rem;
+    animation: fadeInLeft 1.5s ease-in-out; }
+
+.Navbar {
+  width: 100%;
+  height: 7rem;
+  position: fixed;
+  z-index: 1;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #F8FAE5;
+  background-color: #151515;
+  top: 0; }
+  .Navbar__logo {
+    letter-spacing: 7px;
+    font-size: 1.8rem;
+    position: relative;
+    transition: .3s;
+    cursor: pointer; }
+    .Navbar__logo::after {
+      content: "";
+      width: 0%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      position: absolute;
+      border-bottom: 1px solid #F8FAE5;
+      z-index: -1;
+      transition: .4s all ease; }
+    .Navbar__logo:hover::after {
+      width: 100%; }
+  .Navbar__buttonsCtn {
+    right: 4rem;
+    cursor: pointer; }
+  .Navbar__buttons {
+    position: relative;
+    padding: 1px;
+    display: inline-block; }
+    .Navbar__buttons:not(:last-child) {
+      margin-right: 5rem; }
+    .Navbar__buttons::after {
+      content: "";
+      width: 0%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      position: absolute;
+      border-bottom: 1px solid #F8FAE5;
+      z-index: -1;
+      transition: .4s all ease; }
+    .Navbar__buttons:hover::after {
+      width: 100%; }
+
+.Form {
+  width: 30%;
+  background-color: #f8fae5;
+  padding: 5rem;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1rem 1rem 1.5rem rgba(21, 21, 21, 0.8);
+  animation: fadeInLeft .65s ease;
+  backface-visibility: hidden;
+  color: #151515;
+  margin-top: -7rem;
+  max-height: 75vh;
+  overflow-y: scroll; }
+  .Form__heading {
+    letter-spacing: 15px;
+    text-align: left; }
+  .Form__error {
+    color: red;
+    font-size: 1.3rem;
+    font-style: italic;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    visibility: hidden;
+    text-align: center; }
+  .Form__backIcon {
+    width: 3rem;
+    position: absolute;
+    right: 5rem;
+    cursor: pointer;
+    transition: all .3s; }
+    .Form__backIcon:active {
+      transform: translateY(3px); }
+  @media screen and (orientation: portrait) {
+    .Form {
+      width: 60%; } }
+
+.Form--withImage {
+  width: 60%; }
+  .Form--withImage__Ctn {
+    display: flex; }
+  .Form--withImage__inputs {
+    width: 50%;
+    text-align: center; }
+    .Form--withImage__inputs > .Button {
+      margin-top: 1rem; }
+    .Form--withImage__inputs__error {
+      visibility: hidden;
+      color: red; }
+  .Form--withImage__imageArea {
+    width: 50%;
+    padding-left: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .Form--withImage__imageArea__image {
+      max-width: 80%;
+      max-height: 80%; }
+
+.showError {
+  visibility: visible; }
+
+.shiftUp {
+  margin-top: 2.5rem; }
+
+.InputBox {
+  width: 100%;
+  border-bottom: 1px solid #151515;
+  position: relative;
+  font-weight: 500; }
+  .InputBox__input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #151515;
+    font-family: inherit;
+    padding-bottom: .25rem;
+    width: 100%;
+    font-size: 1.4rem; }
+  .InputBox__label {
+    position: absolute;
+    left: 0;
+    transition: all .2s ease-in;
+    font-style: italic; }
+    .InputBox__label--shifted {
+      transform: translateY(2.25rem);
+      font-size: 1.2rem; }
+  .InputBox__input:focus + .InputBox__label {
+    transform: translateY(2.25rem);
+    font-size: 1.2rem; }
+
+.InputBox--inverted {
+  width: 100%;
+  border-bottom: 1px solid #F8FAE5;
+  position: relative;
+  font-weight: 500; }
+  .InputBox--inverted__input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #F8FAE5 !important;
+    font-family: inherit;
+    padding-bottom: .25rem;
+    width: 100%;
+    font-size: 1.4rem; }
+  .InputBox--inverted__label {
+    position: absolute;
+    left: 0;
+    transition: all .2s ease-in;
+    font-style: italic; }
+    .InputBox--inverted__label--shifted {
+      transform: translateY(2.25rem);
+      font-size: 1.2rem; }
+  .InputBox--inverted__input:focus + .InputBox--inverted__label {
+    transform: translateY(2.25rem);
+    font-size: 1.2rem; }
+
+.Button {
+  background-color: transparent;
+  border: none;
+  color: #151515;
+  padding: 1rem;
+  font-family: inherit;
+  border: 1px solid #151515;
+  width: 15rem;
+  align-self: center;
+  border-radius: 5px;
+  font-size: 1.8rem;
+  position: relative;
+  transition: all .2s;
+  z-index: 1;
+  cursor: pointer; }
+  .Button::after {
+    content: "";
+    width: 100%;
+    height: 0%;
+    background-color: #151515;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: all .2s ease-in; }
+  .Button:hover {
+    color: #F8FAE5; }
+    .Button:hover::after {
+      height: 100%; }
+  .Button:active {
+    transform: translateY(3px); }
+
+.Button--invertColour {
+  background-color: transparent;
+  border: none;
+  color: #F8FAE5;
+  padding: 1rem;
+  font-family: inherit;
+  border: 1px solid #F8FAE5;
+  width: 15rem;
+  align-self: center;
+  border-radius: 5px;
+  font-size: 1.8rem;
+  position: relative;
+  transition: all .2s;
+  z-index: 1;
+  cursor: pointer; }
+  .Button--invertColour::after {
+    content: "";
+    width: 100%;
+    height: 0%;
+    background-color: #F8FAE5;
+    position: absolute;
+    border-radius: 5px;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: all .2s ease-in; }
+  .Button--invertColour:hover {
+    color: #151515; }
+    .Button--invertColour:hover::after {
+      height: 100%; }
+  .Button--invertColour:active {
+    transform: translateY(3px); }
+
+.Gallery {
+  width: 100%;
+  padding-top: calc(7rem + 4rem);
+  height: 100vh;
+  color: #151515;
+  text-align: center;
+  position: relative;
+  animation: fadeIn .75s ease; }
+  .Gallery__TokenForm {
+    display: none; }
+  .Gallery__TokenForm--show {
+    display: flex; }
+  .Gallery__heading {
+    font-size: 3rem; }
+  .Gallery__paintings {
+    display: flex;
+    padding: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-evenly; }
+
+.ArtCard {
+  position: relative;
+  width: max-content;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  margin: 1rem;
+  animation: fadeInLeft .5s ease .1s backwards; }
+  .ArtCard__img {
+    width: 35rem;
+    height: 50rem;
+    visibility: hidden; }
+  .ArtCard__side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #151515;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transition: all .5s;
+    border-radius: 5px; }
+    .ArtCard__side--front {
+      background-color: #151515;
+      color: #F8FAE5;
+      background-size: cover;
+      background-position: center; }
+      .ArtCard__side--front__image {
+        width: 100%;
+        height: 100%;
+        display: none; }
+    .ArtCard__side--back {
+      background-image: linear-gradient(to bottom right, #151515, #F8FAE5);
+      color: #F8FAE5;
+      transform: rotateY(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-direction: column;
+      border: 1px solid #151515;
+      padding: 3rem;
+      box-shadow: 0.5rem 0.5rem 1rem #151515; }
+      .ArtCard__side--back__details {
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        width: 100%;
+        flex-direction: column;
+        height: 100%; }
+        .ArtCard__side--back__details__name {
+          margin-bottom: 2rem; }
+        .ArtCard__side--back__details__artist {
+          text-decoration: underline;
+          text-underline-offset: 3px;
+          text-decoration-thickness: 1px;
+          font-size: 1.5rem;
+          align-self: center;
+          text-align: center; }
+        .ArtCard__side--back__details__info {
+          margin-bottom: 2rem;
+          text-align: center; }
+          .ArtCard__side--back__details__info > span {
+            font-weight: 600;
+            font-size: 1.6rem; }
+  .ArtCard:hover .ArtCard__side--front {
+    transform: rotateY(180deg); }
+  .ArtCard:hover .ArtCard__side--back {
+    transform: rotateY(0deg); }
+
+.TokenForm {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-size: contain;
+  background-repeat: repeat-x;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .3s;
+  animation: fadeIn .75s ease; }
+  .TokenForm__form {
+    position: relative;
+    width: 30%;
+    background-color: #f8fae5;
+    color: #151515;
+    padding: 5rem;
+    margin-top: -7rem;
+    border-radius: 5px;
+    box-shadow: 1rem 1rem 1rem rgba(21, 21, 21, 0.5);
+    animation: fadeInLeft .75s ease 1s backwards;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; }
+    .TokenForm__form__heading {
+      width: 80%;
+      margin-bottom: .5rem; }
+    .TokenForm__form__info {
+      align-self: flex-start;
+      text-align: left; }
+    .TokenForm__form__input {
+      margin-top: 3rem; }
+    .TokenForm__form__error {
+      font-size: 1.2rem;
+      color: red;
+      visibility: hidden; }
+    .TokenForm__form__error--show {
+      visibility: visible; }
+    .TokenForm__form__backIcon {
+      top: 5rem; }
+    .TokenForm__form__valuesBox {
+      width: 100%;
+      height: 8rem;
+      background-color: #151515;
+      border-radius: 5px;
+      display: flex; }
+      .TokenForm__form__valuesBox__value {
+        width: 50%;
+        color: #F8FAE5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        font-weight: 500; }
+
+.PopUpPage {
+  position: fixed;
+  top: 7rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  backdrop-filter: blur(3px);
+  transition: all .5s; }
+
+.hidePopUp {
+  display: none; }
